@@ -1,0 +1,29 @@
+library(shiny)
+shinyUI(fluidPage(
+    
+    # Application title
+    titlePanel("Analysis of Miles Per Gallon Categorically"),
+    
+    sidebarPanel(
+        selectInput("variable", " Select Variable:", 
+                    c("Cylinders" = "cyl",
+                      "Transmission" = "am",
+                      "Gears" = "gear",
+                      "Engine"="vs",
+                      "Carburetor"="carb")),
+        helpText("All the categorical varibles are taken from mtcars data in this variable selection 
+        to provides informations about miles per gallon categorically in each aspect. 
+                 ")
+        
+    ),
+    
+    mainPanel(
+        #create tabs
+        tabsetPanel(
+            type="tab",
+            tabPanel("Boxplot",plotOutput("mpgPlot")),
+            tabPanel("Data",tableOutput("data"))
+        )
+        
+    )
+))
