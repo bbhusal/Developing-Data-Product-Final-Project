@@ -11,17 +11,17 @@ mpgData$carb<-factor(mpgData$carb,labels =c("1","2","3","4","6","8"))
 
 shinyServer(function(input, output) {
     formulaText <- reactive({
-        paste("mpg vs ", input$variable)
+        paste("Miles Per Gallon vs ", input$variable)
     })
     
-    output$caption <- renderText({
+    output$header <- renderText({
         formulaText()
     })
     
     
     output$mpgPlot <- renderPlot({
         ggplot(mpgData, aes_string(x=input$variable, y="mpg", fill= input$variable)) + geom_boxplot()+
-            labs(title="Boxplots of Miles Per Gallon",y="Miles Per Gallon")+
+            labs(title="Boxplots of Miles Per Gallon",x=input$variable, y="Miles Per Gallon")+
                      theme_classic()
                  
     })
