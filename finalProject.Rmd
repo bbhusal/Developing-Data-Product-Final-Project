@@ -26,7 +26,7 @@ This presentation is a part of final project assignment in the Developing Data P
 
 ## MTCARS DATASETS
 The data used in the app comes from the Motor Trend Car Road Tests (mtcars) dataset. The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973-74 models). Out of the 10 five are categorical. We can look to some carachteristics of the data:
-```{r , echo=FALSE}
+```{r , echo=TRUE}
 head(mtcars)
 ```
 
